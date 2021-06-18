@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Emoji Rain</title>
+  <link rel="shortcut icon" type="image/png" href="http://placekitten.com/200/300">
+  <style>
+  span {
+    position: relative;
+    top: "1px";
+  }
+  
+  body {
+    background-color: black;
+  }
+  </style>
+</head>
+
+<body>
+
+  <span>💙</span>
+  <span>😍</span>
+  <span>💚</span>
+  <span>😇</span>
+  <span>👊</span>
+  <span>🖤</span>
+  <span>💌</span>
+  <span>💖</span>
+  <span>💘</span>
+  <span>💜</span>
+  
+</body>
+
+<script>
+
+let firstEmoji = document.querySelector("span")
+let lastEmoji = document.querySelectorAll("span")[2]
+
+let emojis = document.querySelectorAll("span")
+
+function moveEmoji(theEmoji){
+  let currentPosition = parseInt(theEmoji.style.top);
+  let newPosition = currentPosition + 10;
+  
+  // How would I use window.innerHeight to tell the emoji
+  // that if they are about to go off screen, they should go back to the top?
+  if (newPosition > window.innerHeight){
+    theEmoji.style.top = "1px"
+  } else {
+    theEmoji.style.top = newPosition + "px";
+  }
+  
+ 
+}
+
+emojis.forEach(function(emoji){
+  console.log(emoji)
+  emoji.style.top = "1px"
+  setInterval(function(){
+    moveEmoji(emoji)
+  }, 100)
+})
+</script>        
+
+</html>

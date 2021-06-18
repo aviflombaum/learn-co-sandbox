@@ -1,0 +1,10 @@
+1. How do I get the emoji onto the page?
+
+2. How will I make them move? 
+
+3. finding the emojis via document.querySelector
+
+4. Change their top property and move it down the page?
+
+5. Keep doing that until all of them loop down to the bottom.
+
